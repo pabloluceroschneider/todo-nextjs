@@ -1,7 +1,5 @@
 import type { StatusTask, Task } from "@/types";
 
-const API_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT76-g6vC3THuKZW43RYz1_LpQqvkwzSmgEQZcZNSmH5PHFfy2ctLydp7HQ7iXFmCTuiwSNkKksN1Ve/pub?output=tsv"
-
 type TasksByStatus = {
 	TODO: Task[],
 	WIP: Task[],
@@ -9,6 +7,8 @@ type TasksByStatus = {
 }
 
 export class TaskRepository {
+	static API_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT76-g6vC3THuKZW43RYz1_LpQqvkwzSmgEQZcZNSmH5PHFfy2ctLydp7HQ7iXFmCTuiwSNkKksN1Ve/pub?output=tsv"
+
 	/**
 	 * Fetch tasks grouped by status
 	 */
@@ -30,7 +30,7 @@ export class TaskRepository {
 	 * Fetch all tasks
 	 */
 	static async fetchAllTasks(): Promise<Task[]> {
-		const response = await TaskRepository.fetch(API_URL);
+		const response = await TaskRepository.fetch();
 		const rows = response.split("\n").slice(1);
 
 		const data: Task[] = rows.map(row => {
@@ -54,9 +54,9 @@ export class TaskRepository {
 	/**
 	 * Fetch 
 	 */
-	static async fetch(url: string): Promise<string> {
+	static async fetch(): Promise<string> {
 		try {
-			const response = await fetch(url);
+			const response = await fetch(TaskRepository.API_URL);
 			return await response.text();
 		} catch (error) {
 			throw error;
