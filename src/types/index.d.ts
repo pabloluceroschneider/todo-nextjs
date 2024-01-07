@@ -4,8 +4,8 @@ export const enum StatusTask {
   DONE = "DONE"
 }
 export interface Task {
+  timestamp: Date;
   id: number;
-  timestamp: number;
   title: string;
   description: string;
   assignedTo: string;
