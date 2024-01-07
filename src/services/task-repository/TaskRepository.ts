@@ -57,8 +57,7 @@ export class TaskRepository {
 	static async fetch(url: string): Promise<string> {
 		try {
 			const response = await fetch(url);
-			const responseText = await response.text();
-			return responseText;
+			return await response.text();
 		} catch (error) {
 			throw error;
 		}
