@@ -34,11 +34,11 @@ export class TaskRepository {
 		const rows = response.split("\n").slice(1);
 
 		const data: Task[] = rows.map(row => {
-			const [id, timestamp, title, description, assignedTo, status, priority] = row.split("\t");
+			const [timestamp, id, title, description, assignedTo, status, priority] = row.split("\t");
 
 			return {
+				timestamp: new Date(timestamp),
 				id: Number(id),
-				timestamp: Number(timestamp),
 				title,
 				description,
 				assignedTo,
