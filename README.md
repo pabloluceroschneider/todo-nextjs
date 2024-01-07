@@ -1,15 +1,12 @@
 <div align="center">
   <h1 align="center">todo-nextjs</h1>
+  
   <img height="80" src="https://github.com/pabloluceroschneider/todo-nextjs/assets/43233080/182c0b2c-3896-4615-99ed-5d8bc566b652" alt="tech" />
 
-  <br/><br/>
+  <h5>This project displays a list of todo activities stored in the Google Sheet.</h5>
 
-  <p>This project displays a list of todo activities stored in the Google Sheet.</p>
-  
-  <hr/>
-  
 </div>
-
+<hr/>
 
 ## Getting Started
 
