@@ -1,24 +1,14 @@
 import { TaskRepository } from "@/services/task-repository"
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import { Column } from "@/components/column/Column";
 
 export default async function Home() {
-  const tasks = await TaskRepository.fetchAllTasks();
+  const tasks = await TaskRepository.fetchTasksByStatus();
 
   return (
-    <main className="flex min-h-screen flex-col gap-8 p-24">
-      {tasks.map(task => (
-        <Card key={task.id}>
-          <CardHeader>
-            <CardTitle>{task.title}</CardTitle>
-            <CardDescription>{task.description}</CardDescription>
-          </CardHeader>
-        </Card>
-      ))}
+    <main className="flex min-h-screen gap-24 p-24">
+      <Column id="TODO" status="TODO" tasks={tasks.TODO} />
+      <Column id="WIP" status="WIP" tasks={tasks.WIP} />
+      <Column id="DONE" status="DONE" tasks={tasks.DONE} />
     </main>
   )
 }
