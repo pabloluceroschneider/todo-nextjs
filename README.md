@@ -1,4 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <h1 align="center">todo-nextjs</h1>
+  <img height="80" src="https://github.com/pabloluceroschneider/todo-nextjs/assets/43233080/182c0b2c-3896-4615-99ed-5d8bc566b652" alt="tech" />
+
+  <br/><br/>
+
+  <p>This project displays a list of todo activities stored in the Google Sheet.</p>
+  
+  <hr/>
+  
+</div>
+
 
 ## Getting Started
 
