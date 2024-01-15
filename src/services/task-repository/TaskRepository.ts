@@ -76,7 +76,7 @@ export class TaskRepository {
 				"entry.369402124": task.assignedTo,
 				"entry.1460689905": task.status,
 				"entry.1172412426": task.priority,
-			}).toString();
+			})
 
 			const response = await fetch(TaskRepository.URL_GFORM, {
 				method: "POST",
